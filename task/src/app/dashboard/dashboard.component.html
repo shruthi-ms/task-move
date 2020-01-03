@@ -1,0 +1,92 @@
+<mat-toolbar color="primary" class="app-header">
+  
+    <span class="nav-tool-items">
+      <a mat-button routerLink="" routerLinkActive="active">MOVE</a>
+      <a mat-button [routerLink]="['/login']" class="right-logout" routerLinkActive="active">LOGOUT</a><!--logout/redirects to login page-->
+    </span>
+  </mat-toolbar>
+  <!-- <div>
+    <h1>messages</h1>
+  <ng-container *ngFor="let data of allData">
+    <p>{{data.threadId}}, {{data.ThreadOwner}}, {{data.messageOwner}}, {{data.message}}</p>
+  </ng-container>
+</div> -->
+<!-- <app-chat class={{dataservice.chatvar}}></app-chat> -->
+<!-- <div>
+    <ng-container *ngFor="let ll of threadlist">
+        <h2>{{ll.threadId}}</h2>
+    </ng-container>
+</div> -->
+
+
+          <div class="container">
+              <h3 class=" text-center">Messaging</h3>
+              
+                          
+                          <!-- <div class="outgoing_msg">
+                            <div class="sent_msg">
+                              <p>Test which is a new approach to have all
+                                solutions</p>
+                              <span class="time_date"> 11:01 AM    |    June 9  </span>
+                              <span class="delete {{dataservice.chatvarout}}">Delete</span>
+                          </div>
+                          </div>
+                          
+                          <div class="outgoing_msg">
+                            <div class="sent_msg">
+                              <p>Apollo University, Delhi, India Test</p>
+                              <span class="time_date"> 11:01 AM    |    Today</span> 
+                              <span class="delete {{dataservice.chatvarout}}">Delete</span>
+                          </div> -->
+                              
+                          <ng-container *ngFor="let d of threadlist">
+                            <h4><i>Thread-{{d.ThreadId}}</i></h4>
+                            <ng-container *ngFor="let data of allData">
+                                <ng-container  *ngIf="check(data.threadId, d.ThreadId)">
+                              <div class="incoming_msg">
+                                <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+                                <div class="received_msg">
+                                  <!--diaplying the messages-->
+                                  <ng-container  *ngIf="checknamenot(data.messageOwner)">
+                                      <div class="received_withd_msg">
+                                          <p>{{data.message}} <span (click)="delete()" class="delete {{dataservice.chatvarin}}">Delete</span></p>                                                                     
+                                        </div>
+                                      <span class="time_date"> {{data.messageOwner}}    |    {{data.datetime}} </span>
+                                      
+                                    </ng-container>
+
+                                    <!--Delete functionality-->
+                                  <ng-container  *ngIf="checkname(data.messageOwner)">
+                                      <div class="received_withd_msg">
+                                          <p>{{data.message}} <span (click)="delete()"class="delete {{dataservice.chatvarout}}">Delete</span></p>                                                                     
+                                        </div>
+                                      <span class="time_date"> You    |    {{data.datetime}} </span>
+                                      
+                                  </ng-container>
+
+                                  <ng-container  *ngIf="checknameadmin(data.messageOwner)">
+                                      <div class="received_withd_msg">
+                                          <p>{{data.message}} <span (click)="delete()"class="delete {{dataservice.chatvarout}}">Delete</span></p>                                                                     
+                                        </div>
+                                      <span class="time_date"> Admin    |    {{data.datetime}} </span>
+                                      
+                                  </ng-container>
+                                </div>
+                            </div>
+                            </ng-container>
+                          </ng-container>
+                          </ng-container>
+                        
+                        
+                          <!-- <div class="outgoing_msg">
+                              <div class="sent_msg">
+                                <p>Test which is a new approach to have all
+                                  solutions</p>
+                                <span class="time_date"> 11:01 AM    |    June 9  </span>
+                                <span class="delete {{dataservice.chatvarout}}">Delete</span>
+                            </div>
+                            </div> -->
+
+
+                    </div>
+          

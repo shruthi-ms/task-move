@@ -1,0 +1,42 @@
+
+
+    <!-- <form #userlogin = "ngForm" (ngSubmit) = "loginClick(userlogin.value)" >
+       
+        <input class="inputtext" type = "text" name = "emailid" placeholder = "emailid" ngModel>
+        <br/>
+        <input class="inputtext" type = "password" name = "passwd" placeholder = "passwd" ngModel>
+        <br/>
+        <input type = "submit" value = "submit">
+    </form> -->
+
+
+<div class="container" id="iii">
+        <br><br><br><br>
+        <h2 class="center"><span class="glyphicon glyphicon-user"></span> &nbsp; LOGIN</h2>
+        <form class="form-horizontal" #userlogin = "ngForm" (ngSubmit) = "loginClick(userlogin.value)">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Username:</label>
+            <div class="col-sm-10">
+                <input class="form-control" type = "text" name = "emailid" placeholder = "email-id" ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <div class="col-sm-10">          
+                <input class="form-control" type = "password" name = "passwd" placeholder = "password" ngModel>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10">
+                    <input type = "submit" value = "submit">
+            </div>
+          </div>
+        </form>
+      </div>
